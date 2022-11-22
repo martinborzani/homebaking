@@ -1,0 +1,224 @@
+/* * {
+    border: 1px solid red;
+} */
+
+body {
+    background-image: url(../img/fondo_cripto.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.detalle_main {
+    min-height: 30vh;
+    perspective: 1000px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5rem;
+    flex-wrap: wrap;
+}
+
+
+/* .detalle_cards {
+    background-image: url(../img/fondo_negro_tarjeta_contenedor.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid white;
+    padding: 2rem;
+    border-radius: 1rem;
+} */
+
+.detalle_titulo {
+    display: flex;
+    width: 100%;
+    background-color: #D4AF37;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: black;
+    border-radius: 0.6rem;
+}
+
+.dise_boton a {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    margin-left: 40%;
+    margin-right: 40%;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.contenedor_card {
+    position: relative;
+    height: 17rem;
+    width: 30rem;
+    z-index: 100;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+
+.contenedor_card:hover {
+    transform: rotateY(180deg);
+}
+
+.contenedor_card .card {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 1rem;
+    background-image: url(../img/dogecointCard.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid black;
+    backface-visibility: hidden;
+    /*  backdrop-filter: blur(25px);
+    background-color: red;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25); */
+}
+
+.front-face header,
+.front-face .logo {
+    display: flex;
+    align-items: center;
+}
+
+.front-face .logo {
+    flex-direction: column;
+}
+
+.front-face .logo span {
+    font-size: 13px;
+}
+
+.front-face header {
+    justify-content: space-between;
+}
+
+.front-face .logo h5 {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.front-face .chip {
+    width: 70px;
+}
+
+.front-face .card-details {
+    display: flex;
+    margin-top: 40px;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+h5.number {
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+h5.name {
+    margin-top: 20px;
+}
+
+.card.back-face {
+    border: none;
+    padding: 15px 25px 25px 25px;
+    transform: rotateY(180deg);
+}
+
+.card.back-face h6 {
+    font-size: 10px;
+}
+
+.card.back-face .magnetic-strip {
+    position: absolute;
+    height: 45px;
+    width: 100%;
+    top: 40px;
+    left: 0;
+    background-color: black;
+}
+
+.card.back-face .signature {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 80px;
+    height: 3rem;
+    width: 90%;
+    border-radius: 6px;
+    background: repeating-linear-gradient(#fff, #fff 3px, #efefef 0px, #efefef 9px);
+}
+
+.signature i {
+    color: black;
+    font-size: 15px;
+    padding: 4px 6px;
+    margin-right: -30px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.card.back-face h5 {
+    font-size: 10px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .contenedor_card {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .contenedor_principal {
+        display: flex;
+        justify-content: center;
+        margin-left: 5rem;
+    }
+    .contenedor_card {
+        height: 14rem;
+        width: 19rem;
+        padding-right: 7rem;
+    }
+    .valid-date h6,
+    .valid-date h5 {
+        font-size: 8px;
+    }
+    h5.name {
+        font-size: 10px;
+    }
+    .name-number h6 {
+        font-size: 8px;
+    }
+    h5.number {
+        font-size: 1rem;
+    }
+}
+
+.botonLogout {
+    padding: .5rem;
+    border-radius: 0.6rem;
+    border: 1px solid black;
+    background: none;
+    transition: 0.5s;
+}
+
+.botonLogout:hover {
+    transform: translatey(10px)
+}
+
+
+/* From uiverse.io by @adamgiebl */
+
+
+/* .boton_eliminar {
+    position: absolute;
+    top: 100px;
+} */

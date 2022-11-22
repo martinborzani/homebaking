@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear nuevo prestamo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/loan-application.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="sweetalert2.min.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <nav class="navbar navbar-expand-lg bg-warning">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="accounts.html">DogeCoin Bank | </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Balance <i class="bi bi-coin"></i> | </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="transference.html">Transferencia <i class="bi bi-arrow-right-square-fill"></i> | </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Prestamos  <i class="bi bi-bank"></i> | </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="datopersonal.html">Datos Personales  <i class="bi bi-person-bounding-box"></i> | </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cards.html">Tarjetas <i class="bi bi-credit-card-fill"></i> | </a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                    <!-- <a href="logout.html">Logout</a> -->
+                    <input v-on:click="logoutClient()" type="submit" value="logout" class="botonLogout">
+
+                </span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container text-light ">
+            <main class="detalle_main d-flex flex-column justify-content-center align-items-center">
+
+                <h1 class="mt-5">Seleccione el tipo de cuenta</h1>
+
+
+                <form class="estilo_formulario_prestamo">
+
+
+
+
+                    <select name="loans" id="loans" v-model="typeAccount">
+                        <option selected="true" disabled="disabled">seleccione el tipo de cuenta</option>
+                        <option value="Ahorro" >Ahorro</option>
+                        <option value="Corriente" >Corriente</option>
+                    
+                     </select>
+
+
+                    <fieldset class="mt-5 ">
+
+                        <button type="submit " v-on:click.prevent="createAccount()">
+                        <div>
+                          <span>
+                            <p>¿Listo?</p><p>:)</p>
+                          </span>
+                        </div>
+                        <div>
+                          <span>
+                            <p>Crear</p>
+                          </span>
+                        </div>
+                      </button>
+                    </fieldset>
+                </form>
+
+
+            </main>
+        </div>
+
+
+
+        <div class="wave ">
+
+        </div>
+
+        <footer class="footer_detalle ">
+
+            <div class="footer_flex ">
+                <section>
+
+                    <div class="ms-5 mt-5 ">
+                        <h3>DogeCoin Bank</h3>
+                        <div class="logo_redes mt-3 mb-3 ">
+                            <i class="bi bi-facebook "></i>
+                            <i class="bi bi-instagram ms-4 "></i>
+                            <i class="bi bi-twitter ms-4 "></i>
+                        </div>
+                        <a href="# ">Politica de Privacidad</a>
+                        <div class="img_footer mt-3 ">
+                            <img src="assets/img/prueba-store.png " alt="store-google ">
+
+                        </div>
+                    </div>
+
+                </section>
+
+
+
+                <section>
+                    <div class="ms-5 mt-5 ">
+                        <h3>Funcionalidades</h3>
+                        <div class="d-flex flex-column links_footer ">
+                            <a href="# ">Balance</a>
+                            <a href="# ">Transferencia</a>
+                            <a href="# ">Creditos</a>
+                            <a href="# ">Datos Personales</a>
+                            <a href="# ">Logout</a>
+
+                        </div>
+                    </div>
+                </section>
+
+                <img style="height: 200px; " src="assets/img/logo_dogecoint.png " alt="logo-dogecoint ">
+
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8 " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js "></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js " integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin=" anonymous "></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/accounts.js "></script>
+
+
+</body>
+
+</html>

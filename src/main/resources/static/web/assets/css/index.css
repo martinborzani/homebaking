@@ -1,0 +1,337 @@
+ /* {
+    border: 2px solid red;
+} */
+ 
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Noto Sans Mono', monospace;
+ }
+ 
+ body {
+     background-image: url(../img/bitcoin_fondo_black.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+ 
+ header {
+     background-image: url(../img/header.jpg);
+     height: 80vh;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+ }
+ 
+ .boton_ingreso_nav_index {
+     text-decoration: none;
+     border: 1px solid black;
+     padding: 0.7rem;
+     border-radius: 0.5rem;
+ }
+ 
+ .boton_ingreso_nav_index:hover {
+     transform: rotate(360deg);
+     background-color: beige;
+ }
+ 
+ .caja_index_main {
+     min-height: 5vh;
+ }
+ 
+ .nav-link:hover {
+     color: white;
+ }
+ 
+ .caja_servicio_secundario_index {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     align-items: center;
+ }
+ 
+ .tarjeta_servicios_index {
+     border-radius: 1rem;
+     margin-top: 2rem;
+     height: 11rem;
+     width: 35rem;
+     background-color: white;
+     border: 3px solid #D4AF37;
+     animation-duration: 1s;
+     color: black;
+     padding-left: 0;
+ }
+ 
+ .texto_card_1er_contenedor {
+     width: 70%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border: 1px solid #D4AF37;
+     background-color: #D4AF37;
+     padding-left: 0;
+     border-radius: 1rem;
+     border-top-right-radius: 3.5rem;
+     border-bottom-right-radius: 3.5rem;
+     padding-left: 1rem;
+     padding-right: 1rem;
+ }
+ 
+ .imagen_card_1er_contenedor {
+     width: 30%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .video_index {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .video_index video {
+     border-radius: 2rem;
+     width: 940px;
+     height: 680px;
+ }
+ 
+ .caja_explicativo_index {
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     /*  background-color: #525252; */
+     background-image: url(../img/fondo_cripto.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     border-radius: 1rem;
+ }
+ 
+ .carta_cliente_index {
+     margin-top: 2rem;
+     height: 20rem;
+     width: 20rem;
+     border: 2px solid #D4AF37;
+     border-radius: 1rem;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+     background-color: black;
+ }
+ 
+ .carta_cliente_index i {
+     margin-top: 1rem;
+     font-size: 2rem;
+ }
+ 
+ .carta_cliente_index p {
+     padding: 1rem;
+ }
+ 
+ .ayuda_online_index {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+     width: 100%;
+     /*  border-top: 2px solid #D4AF37;
+    border-bottom: 2px solid #D4AF37; */
+     margin-top: 2rem;
+     /*  background-color: white; */
+ }
+ 
+ .caja_ayuda_online_index {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap;
+ }
+ 
+ .caja_1_ayuda {
+     margin-right: 2rem;
+     width: 25rem;
+ }
+ /* --- footer index --- */
+ 
+ .footer_detalle {
+     min-height: 15vh !important;
+     background-color: #D4AF37;
+ }
+ 
+ .logo_redes {
+     font-size: 1.5rem;
+ }
+ 
+ .links_footer a {
+     text-decoration: none;
+     color: black;
+     font-size: 1rem;
+ }
+ 
+ .wave {
+     background-image: url(../img/svg.png);
+     min-height: 30vh;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: 0%;
+ }
+ /* BOTON */
+ 
+ button {
+     padding: 0.7rem;
+     text-transform: uppercase;
+     letter-spacing: 2.5px;
+     font-weight: 500;
+     color: #fff;
+     background-color: black;
+     border: none;
+     border-radius: 1rem;
+     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+     transition: all 0.3s ease 0s;
+     cursor: pointer;
+     outline: none;
+ }
+ 
+ button:hover {
+     background-color: white;
+     box-shadow: 0px 15px 20px black;
+     color: #D4AF37;
+     transform: translateY(-7px);
+ }
+ 
+ button:active {
+     transform: translateY(-1px);
+ }
+ /*  ---- foooter ---- */
+ 
+ .footer_detalle {
+     min-height: 40vh;
+     background-color: #D4AF37;
+ }
+ 
+ .logo_redes {
+     font-size: 1.5rem;
+ }
+ 
+ .links_footer a {
+     text-decoration: none;
+     color: black;
+     font-size: 1rem;
+ }
+ 
+ .footer_flex {
+     display: flex;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     align-items: center;
+     width: 100%;
+ }
+ 
+ .img_footer {
+     display: flex;
+ }
+ /* --- mediaqueries ---  */
+ 
+ @media (max-width: 1024px) {
+     .flecha-derecha {
+         display: none;
+     }
+ }
+ 
+ @media (max-width: 768px) {
+     header {
+         height: 45vh;
+     }
+     .footer_detalle {
+         min-height: 40vh
+     }
+     .caja_index_main {
+         min-height: 15vh;
+     }
+     .video_index video {
+         width: 540px;
+         height: 380px;
+     }
+     .caja_1_ayuda {
+         text-align: center;
+         font-size: 1rem;
+         margin-left: 1rem;
+         width: 20rem;
+     }
+     .caja_ayuda_online_index {
+         justify-content: center;
+     }
+     .caja_2_ayuda img {
+         height: 400px;
+     }
+ }
+ 
+ @media (max-width: 425px) {
+     .img_footer {
+         flex-direction: column;
+     }
+     .img_footer img {
+         margin-top: 1rem;
+     }
+     .video_index video {
+         width: 400px;
+         height: 280px;
+     }
+ }
+ 
+ @media (max-width: 320px) {
+     .video_index video {
+         width: 300px;
+         height: 280px;
+     }
+     .detalle_tabla {
+         font-size: 0.9rem;
+     }
+     .caja_1_ayuda {
+         width: 15rem;
+     }
+ }
+ /* --- INICIO ROCKET --- */
+ 
+ #back-top {
+     position: fixed;
+     bottom: 0;
+     left: 10%;
+     z-index: 1000;
+     display: none;
+     cursor: pointer;
+     font-size: 1.6rem;
+     background: white;
+     padding: 1rem;
+     background-color: transparent;
+     color: white;
+ }
+ 
+ .fly {
+     position: absolute;
+     animation: launch ease-in-out 3s infinite;
+     -webkit-animation: launch ease-in-out 3s infinite
+ }
+ 
+ @-webkit-keyframes launch {
+     100% {
+         transform: translateY(-800px) translateX(800px);
+     }
+ }
+ 
+ @keyframes launch {
+     100% {
+         transform: translateY(-800px) translateX(800px);
+     }
+ }
+ 
+ @media (min-width: 500px) {
+     .content {
+         width: 45%
+     }
+ }
+ /* --- FIN ROCKET --- */

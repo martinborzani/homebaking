@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <link rel="shortcut icon" href="assets/img/logo_dogecoint.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/creditcard.css">
+    <link rel="stylesheet" href="assets/css/botoncreditcard.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+</head>
+
+<body>
+
+    <div id="app">
+        <nav class="navbar navbar-expand-lg bg-warning">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="accounts.html">DogeCoin Bank | </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="transference.html">Transferencia <i class="bi bi-arrow-right-square-fill"></i> | </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="loan-applitaction.html">Prestamos  <i class="bi bi-bank"></i> | </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="datopersonal.html">Datos Personales  <i class="bi bi-person-bounding-box"></i> | </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tarjetas <i class="bi bi-credit-card-fill"></i> | </a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                    <!-- <a href="logout.html">Logout</a> -->
+                    <input v-on:click="logoutClient()" type="submit" value="logout" class="botonLogout">
+
+                </span>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container text-light dise_boton">
+            <main class="detalle_main flex-column">
+                <h5 class="detalle_titulo">Tus tarjetas de credito</h5>
+                <div class="d-flex flex-wrap justify-content-between detalle_cards  ">
+
+                    <div v-for="card of cardsCredit">
+                        <div class=" mt-5 align-items-center ms-5">
+                            <div v-if="prueba < card.thruDate " class="contenedor_card">
+
+
+                                <div class="card front-face">
+                                    <header>
+                                        <span class="logo">
+                                 <h5>DogeCoin Bank</h5>
+                                 <span>{{card.type}}/{{card.color}}</span>
+                                        </span>
+                                        <img src="assets/img/chip_de_tarjeta_de_credito_2-removebg-preview.png" alt="" class="chip">
+                                    </header>
+
+                                    <div class="card-details">
+                                        <div class="name-number">
+                                            <h6>Card Number</h6>
+                                            <h5 class="number">{{card.number}}</h5>
+                                            <h5 class="name">{{card.cardholder}}</h5>
+                                        </div>
+
+                                        <div class="valid-date">
+                                            <h6>Valid Thru</h6>
+                                            <h5>{{card.thruDate}}</h5>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="card back-face">
+                                    <h6>For customer service call 224214345 or email a email@email.com</h6>
+                                    <span class="magnetic-strip"></span>
+                                    <div class="signature"><i>{{card.cvv}}</i></div>
+                                    <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolor, necessitatibus excepturi non est laboriosam, tempora aliquid nihil ratione culpa voluptatibus doloremque molestiae quos exercitationem corporis
+                                        debitis ut, quaerat ullam.</h5>
+                                </div>
+
+
+
+                            </div>
+                            <div v-else>
+
+
+                                <div class="card front-face">
+                                    <header>
+                                        <span class="logo">
+                                 <h5>DogeCoin Bank</h5>
+                                 <span>{{card.type}}/{{card.color}}</span>
+                                        </span>
+                                        <img src="assets/img/chip_de_tarjeta_de_credito_2-removebg-preview.png" alt="" class="chip">
+                                    </header>
+
+                                    <div class="card-details">
+                                        <div class="name-number">
+                                            <h6>Card Number</h6>
+                                            <h5 class="number">{{card.number}}</h5>
+                                            <h5 class="name">{{card.cardholder}}</h5>
+                                        </div>
+
+                                        <div class="valid-date">
+                                            <h6>Valid Thru</h6>
+                                            <h5 class="text-danger">{{card.thruDate}}</h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="card back-face">
+                                    <h6>For customer service call 224214345 or email a email@email.com</h6>
+                                    <span class="magnetic-strip"></span>
+                                    <div class="signature"><i>{{card.cvv}}</i></div>
+                                    <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolor, necessitatibus excepturi non est laboriosam, tempora aliquid nihil ratione culpa voluptatibus doloremque molestiae quos exercitationem corporis
+                                        debitis ut, quaerat ullam.</h5>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button v-on:click="deleteCard(card)" class="boton_eliminar mt-3">Eliminar  <i class="bi bi-x-octagon ms-3"></i></button>
+                    </div>
+
+                </div>
+                <h5 class="detalle_titulo mt-5">Tus tarjetas de debito</h5>
+                <div class="d-flex flex-wrap justify-content-between detalle_cards ">
+
+                    <div v-for="card of cardsDebit">
+                        <div class=" mt-5 align-items-center ms-5">
+                            <div v-if="prueba < card.thruDate" class="contenedor_card">
+                                <div class="card front-face">
+                                    <header>
+                                        <span class="logo">
+                                 <h5>DogeCoin Bank</h5>
+                                 <span>{{card.type}}/{{card.color}}</span>
+                                        </span>
+                                        <img src="assets/img/chip_de_tarjeta_de_credito_2-removebg-preview.png" alt="" class="chip">
+                                    </header>
+
+                                    <div class="card-details">
+                                        <div class="name-number">
+                                            <h6>Card Number</h6>
+                                            <h5 class="number">{{card.number}}</h5>
+                                            <h5 class="name">{{card.cardholder}}</h5>
+                                        </div>
+
+                                        <div class="valid-date">
+                                            <h6>Valid Thru</h6>
+                                            <h5>{{card.thruDate}}</h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="card back-face">
+                                    <h6>For customer service call 224214345 or email a email@email.com</h6>
+                                    <span class="magnetic-strip"></span>
+                                    <div class="signature"><i>{{card.cvv}}</i></div>
+                                    <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolor, necessitatibus excepturi non est laboriosam, tempora aliquid nihil ratione culpa voluptatibus doloremque molestiae quos exercitationem corporis
+                                        debitis ut, quaerat ullam.</h5>
+                                </div>
+                            </div>
+                            <div v-else>
+                                <div class="card front-face">
+                                    <header>
+                                        <span class="logo">
+                                 <h5>DogeCoin Bank</h5>
+                                 <span>{{card.type}}/{{card.color}}</span>
+                                        </span>
+                                        <img src="assets/img/chip_de_tarjeta_de_credito_2-removebg-preview.png" alt="" class="chip">
+                                    </header>
+
+                                    <div class="card-details">
+                                        <div class="name-number">
+                                            <h6>Card Number</h6>
+                                            <h5 class="number">{{card.number}}</h5>
+                                            <h5 class="name">{{card.cardholder}}</h5>
+                                        </div>
+
+                                        <div class="valid-date">
+                                            <h6>Valid Thru</h6>
+                                            <h5 class="text-danger">{{card.thruDate}}</h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="card back-face">
+                                    <h6>For customer service call 224214345 or email a email@email.com</h6>
+                                    <span class="magnetic-strip"></span>
+                                    <div class="signature"><i>{{card.cvv}}</i></div>
+                                    <h5>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolor, necessitatibus excepturi non est laboriosam, tempora aliquid nihil ratione culpa voluptatibus doloremque molestiae quos exercitationem corporis
+                                        debitis ut, quaerat ullam.</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="boton_eliminar mt-3"> Eliminar  <i class="bi bi-x-octagon ms-3"></i></button>
+                    </div>
+
+                </div>
+
+                <!-- <a href="createcard.html" class="mt-5">Crear Tarjetas</a> -->
+                <button onclick="window.location.href='/web/createcard.html'" class="mt-5">
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="currentColor"></path></svg>
+                    <span>Crear Tarjetas</span>
+                  </button>
+            </main>
+
+
+
+        </div>
+
+        <div class="wave">
+
+        </div>
+
+        <footer class="footer_detalle">
+
+            <div class="footer_flex ">
+                <section>
+
+                    <div class="ms-5 mt-5">
+                        <h3>DogeCoin Bank</h3>
+                        <div class="logo_redes mt-3 mb-3">
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-instagram ms-4"></i>
+                            <i class="bi bi-twitter ms-4"></i>
+                        </div>
+                        <a href="#">Politica de Privacidad</a>
+                        <div class="img_footer mt-3">
+                            <img src="assets/img/prueba-store.png" alt="store-google">
+
+                        </div>
+                    </div>
+
+                </section>
+
+
+
+                <section>
+                    <div class="ms-5 mt-5">
+                        <h3>Funcionalidades</h3>
+                        <div class="d-flex flex-column links_footer">
+                            <a href="#">Balance</a>
+                            <a href="#">Transferencia</a>
+                            <a href="#">Creditos</a>
+                            <a href="#">Datos Personales</a>
+                            <a href="#">Logout</a>
+
+                        </div>
+                    </div>
+                </section>
+
+                <img style="height: 200px;" src="assets/img/logo_dogecoint.png" alt="logo-dogecoint">
+
+            </div>
+        </footer>
+
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/cards.js"></script>
+
+
+</body>
+
+</html>

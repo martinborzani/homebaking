@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #01062F !important;
+}
+
+h1 {
+    color: white;
+}
+
+.conteiner_propio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+
+.botoncito {
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .conteiner_propio {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .conteniner_secundario {
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .conteiner_propio {
+        flex-direction: column;
+        justify-content: center;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+}

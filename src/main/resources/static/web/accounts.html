@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="shortcut icon" href="assets/img/logo_dogecoint.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/account.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/botoncreditcard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+</head>
+
+<body>
+
+    <div id="app">
+        <nav class="navbar navbar-expand-lg bg-warning">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">{{nombreCliente}} | </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="transference.html">Transferencia <i class="bi bi-arrow-right-square-fill"></i> | </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="loan-applitaction.html">Prestamos  <i class="bi bi-bank"></i> | </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="datopersonal.html">Datos Personales  <i class="bi bi-person-bounding-box"></i> | </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cards.html">Tarjetas <i class="bi bi-credit-card-fill"></i> | </a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                    <!-- <a href="logout.html">Logout</a> -->
+                    <input v-on:click="logoutClient()" type="submit" value="logout" class="botonLogout">
+
+                </span>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container text-light">
+            <main class="detalle_main">
+                <h1 class="mt-5 d-flex justify-content-center" style="color: #D4AF37;">¡Bienvenido {{nombreCliente}}!</h1>
+
+                <div class="contenedor_carta_accounts">
+                    <h2 class="mt-3" style="color: #D4AF37;">Tus cuentas</h2>
+                    <div class="posicion_carta animate__animated animate__bounce animate__fadeInDown">
+                        <div v-for="cuentas of cuentasClientesNotEnable">
+                            <div class="card1">
+                                <h4>Numero Cuenta:</h4>
+                                <p>{{cuentas.number}} {{cuentas.typeAccount}}</p>
+
+                                <h4>Fecha creacion:</h4>
+                                <p>{{cuentas.creationDate}}</p>
+                                <h4>Saldo:</h4>
+                                <p>${{cuentas.balance}}</p>
+
+                                <a :href="'http://localhost:8080/web/account.html?id=' + cuentas.id">Actividad cuenta {{cuentas.number}}</a>
+
+                            </div>
+                            <button v-on:click="deleteAccount(cuentas)" class="mt-3 p-2">Eliminar  <i class="bi bi-x-octagon ms-3"></i></button>
+                        </div>
+                    </div>
+
+                    <button onclick="location.href = '/web/newaccount.html' " class="mt-5 ms-3">
+                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="currentColor"></path></svg>
+                        <span>Crear cuentas</span>
+                      </button>
+                    <!-- <input type="submit" v-on:click="createAccount()" value="Crear Cuenta"> -->
+
+                </div>
+
+
+                <div class="contenedor_carta_accounts">
+                    <h2 class="mt-5" style="color: #D4AF37;">Tus Prestamos </h2>
+                    <div class="posicion_carta animate__animated animate__bounce animate__fadeInDown ">
+
+
+                        <!-- <div class="carta_loan" v-for="loanCliente of loan">
+                            <h4>Tipo de Prestamo:</h4>
+                            <p>{{loanCliente.name.toUpperCase()}}</p>
+
+                            <h4>Monto:</h4>
+                            <p>${{loanCliente.amount}}</p>
+                            <h4>Cuotas:</h4>
+                            <p>{{loanCliente.payment}}</p>
+
+
+                        </div> -->
+
+                        <div class="card1" v-for="loanCliente of loan">
+                            <h4>Tipo de Prestamo:</h4>
+                            <p>{{loanCliente.name.toUpperCase()}}</p>
+                            <h4>Monto:</h4>
+                            <p>${{loanCliente.amount}}</p>
+                            <h4>Cuotas:</h4>
+                            <p>{{loanCliente.payment}}</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="caja_servicios animate__animated  animate__fadeInDown">
+
+                    <section>
+                        <div>
+                            <a class="effect1" href="loan-applitaction.html">
+                              Creditos
+                              <span class="bg"></span>
+                            </a>
+                        </div>
+
+                    </section>
+
+                    <section>
+                        <div>
+                            <a class="effect1" href="transference.html">
+                              Transferencia
+                              <span class="bg"></span>
+                            </a>
+                        </div>
+                    </section>
+
+
+                </div>
+
+            </main>
+
+        </div>
+
+        <div class="wave">
+
+        </div>
+
+        <footer class="footer_detalle">
+
+            <div class="footer_flex ">
+                <section>
+
+                    <div class="ms-5 mt-5">
+                        <h3>DogeCoin Bank</h3>
+                        <div class="logo_redes mt-3 mb-3">
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-instagram ms-4"></i>
+                            <i class="bi bi-twitter ms-4"></i>
+                        </div>
+                        <a href="#">Politica de Privacidad</a>
+                        <div class="img_footer mt-3">
+                            <img src="assets/img/prueba-store.png" alt="store-google">
+
+                        </div>
+                    </div>
+
+                </section>
+
+
+
+                <section>
+                    <div class="ms-5 mt-5">
+                        <h3>Funcionalidades</h3>
+                        <div class="d-flex flex-column links_footer">
+
+                            <a href="transference.html">Transferencia</a>
+                            <a href="loan-applitaction.html">Creditos</a>
+                            <a href="datopersonal.html">Datos Personales</a>
+
+
+                        </div>
+                    </div>
+                </section>
+
+                <img style="height: 200px;" src="assets/img/logo_dogecoint.png" alt="logo-dogecoint">
+
+            </div>
+        </footer>
+
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/accounts.js"></script>
+
+
+</body>
+
+</html>

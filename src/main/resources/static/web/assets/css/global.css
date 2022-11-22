@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+body {
+    background-image: url(../img/fondo_cripto.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* ----  SVG ---- */
+
+.wave {
+    background-image: url(../img/svg.png);
+    min-height: 30vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0%;
+}
+
+
+/*  ---- foooter ---- */
+
+.footer_detalle {
+    min-height: 40vh;
+    background-color: #D4AF37;
+}
+
+.logo_redes {
+    font-size: 1.5rem;
+}
+
+.links_footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+.footer_flex {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.img_footer {
+    display: flex;
+}

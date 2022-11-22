@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div id="app">
+
+        <div class="logo_out">
+            <a href="index.html"><img src="assets/img/logo_dogecoint.png" style="height: 300px;" alt="logo dogecoint"></a>
+        </div>
+
+        <main class="container">
+            <!-- <div></div> -->
+            <div class="login-box">
+                <h2>Login</h2>
+                <form>
+                    <div class="user-box">
+                        <input v-model="email" type="email" name="" required="">
+                        <label>Email</label>
+                    </div>
+                    <div class="user-box">
+                        <input v-model="password" type="password" name="" required="">
+                        <label>Contraseña</label>
+                    </div>
+
+                    <!-- <a href="accounts.html">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> Login
+                    </a> -->
+                    <input type="submit" v-on:click.prevent="loginClient()" class="botonLogin" value="Logear">
+                </form>
+            </div>
+
+            <div class="login-box">
+                <h2>Registro</h2>
+                <form>
+                    <div class="user-box">
+                        <input v-model="firstName" type="text" name="" required="">
+                        <label>Nombre</label>
+                    </div>
+                    <div class="user-box">
+                        <input v-model="lastName" type="text" name="" required="">
+                        <label>Apellido</label>
+                    </div>
+                    <div class="user-box">
+                        <input v-model="emailRegistro" type="email" name="" required="">
+                        <label>Email</label>
+                    </div>
+                    <div class="user-box">
+                        <input v-model="passwordRegistro" type="password" name="" required="">
+                        <label>contraseña</label>
+                    </div>
+
+                    <input type="submit" v-on:click.prevent="registerClient()" class="botonLogin" value="Registrarse">
+                    <!-- <a href="accounts.html">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> Register
+                    </a> -->
+                </form>
+            </div>
+
+            <!-- <div></div> -->
+        </main>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="assets/js/particulas.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+
+</html>

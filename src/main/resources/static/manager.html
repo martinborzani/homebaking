@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cliente Homebaking</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <div class="container conteiner_propio">
+            <div class="conteniner_secundario">
+                <h1>Client Manager</h1>
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label text-light">First Name</label>
+                        <input v-model="firstName" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                        <div id="emailHelp" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label text-light">Last name</label>
+                        <input v-model="lastName" type="text" class="form-control" id="exampleInputPassword1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label text-light">Email</label>
+                        <input v-model="email" type="email" class="form-control" id="exampleInputPassword1" required>
+                    </div>
+
+                    <button v-on:click="addClient" type="submit" class="btn btn-light">Add Client</button>
+                    <button v-on:click="updateClient" type="submit" class="btn btn-light ms-5">Update Client</button>
+
+                </form>
+
+                <table class="table mt-5">
+                    <thead>
+                        <tr>
+
+                            <th scope="col" class="text-light">First Name</th>
+                            <th scope="col" class="text-light">Last Name</th>
+                            <th scope="col" class="text-light">Email</th>
+                            <th scope="col" class="text-light">Actions</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="client in clientes">
+
+                            <td class="text-light">{{client.firstName}}</td>
+                            <td class="text-light">{{client.lastName}}</td>
+                            <td class="text-light">{{client.email}}</td>
+                            <td><button @click="eliminarCliente(client)" class="botoncito"><i class="bi bi-x-square-fill"></i></button></td>
+                            <td><button v-on:click="modificarCliente(client)" class="botoncito"><i class="bi bi-pencil-square"></i></button></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <pre class="text-light">{{clientes}}</pre>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="manager.js"></script>
+</body>
+
+</html>
