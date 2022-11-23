@@ -32,7 +32,7 @@ public class HomebankingApplication {
 
 
 
-
+//
 //			Client client1 = new Client("Melba","Morel","melba@mindhub.com", passwordEnconder.encode("1234"));
 //			Client client2 = new Client("Martin","Borzani","martinborzani0@gmail.com", passwordEnconder.encode("1234"));
 //			List<Integer> cuotasPrestamoHipotecario = List.of(12,24,36,48,60);
